@@ -1,0 +1,36 @@
+#!perl
+
+# AUTHORITY
+# DATE
+# DIST
+# VERSION
+
+for (sort {lc($a) cmp lc($b)} keys %ENV) {
+    print "$_=$ENV{$_}\n";
+}
+
+# ABSTRACT: Print environment variables, as seen by a Perl script
+# PODNAME:
+
+=head1 SYNOPSIS
+
+ % printenv-perl
+
+In bash:
+
+ % diff -u <(printenv | sort) <(printenv-perl)
+
+
+=head1 DESCRIPTION
+
+You can compare the output of this script with that of B<printenv> utility or
+B<set> (shell internal command).
+
+
+=head1 SEE ALSO
+
+B<printenv> Unix utility
+
+B<set> (shell internal command)
+
+C<%ENV> variable in L<perlvar>
